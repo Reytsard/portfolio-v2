@@ -1,8 +1,8 @@
 function Header() {
   return (
-    <header className="border-1 text-white bg-black">
+    <header className="text-white bg-black">
       <div className="flex place-content-between p-4">
-        <div className="flex gap-[20px]">
+        <div className="flex gap-4">
           <div className="w-[30px] h-[30px] border-1 rounded ">
             {/* <FontAwesomeIcon /> */}
           </div>
@@ -11,7 +11,7 @@ function Header() {
         </div>
         <div className="flex gap-3">
           <div className="w-[30px] h-[30px] border-1 rounded">search</div>
-          <div className="hidden md:flex">
+          <div className="hidden md:flex gap-3">
             <div className="border width-[50px] h-[30px] rounded flex">
               <div className="h-full border-e-2">github</div>
               <div className="w-[23px]">{"<"}</div>
@@ -30,13 +30,23 @@ function Header() {
           <div className="w-[30px] h-[30px] rounded-full border-1">icon</div>
         </div>
       </div>
-      <div className="h-[55px] flex p-3 align-items-center justify-content-end">
+      <div className="h-[55px] flex p-3 align-items-center justify-content-center">
         <div className="flex gap-5">
-          <div className="h-[40px]">Overview</div>
-          <div className="h-[40px]">Repository</div>
-          <div className="h-[40px]">Projects</div>
-          <div className="h-[40px]">Packages</div>
-          <div className="h-[40px]">Stars</div>
+          <div className="h-[30px] px-3 py-1 rounded hover:bg-gray-900 ">
+            Overview
+          </div>
+          <div className="h-[30px] px-3 py-1 rounded hover:bg-gray-900 ">
+            Repository
+          </div>
+          <div className="h-[30px] px-3 py-1 rounded hover:bg-gray-900 ">
+            Projects
+          </div>
+          <div className="h-[30px] px-3 py-1 rounded hover:bg-gray-900 ">
+            Packages
+          </div>
+          <div className="h-[30px] px-3 py-1 rounded hover:bg-gray-900 ">
+            Stars
+          </div>
         </div>
         {/* place overview, repositories, projects,packages, stars{" "}
         <div>

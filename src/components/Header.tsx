@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import {
   ChevronDown,
   CircleDot,
@@ -10,78 +11,128 @@ import {
 } from "lucide-react";
 
 function Header() {
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+
   return (
-    <header className="text-white bg-black">
-      <div className="flex place-content-between p-4">
-        <div className="flex gap-4">
-          <div className="w-[30px] h-[30px] border-1 rounded flex items-center align-center justify-center ">
-            {/* <FontAwesomeIcon /> */}
-            <Menu />
-          </div>
-          <div className="w-[30px] h-[30px] rounded-full border-1 flex items-center align-center justify-center">
-            <Github size={18} />
-          </div>
-          <div className="font-bold">Ronald De Mesa</div>
-        </div>
-        <div className="flex gap-3">
-          <div className="w-[30px] h-[30px] border-1 rounded flex items-center align-center justify-center">
-            <Search size={"18"} />
-          </div>
-          <div className="hidden md:flex gap-3">
-            <div className="border width-[50px] h-[30px] rounded flex">
-              <div className="w-[40px] h-full border-e-2 flex items-center align-center justify-center">
+    <header className="bg-black text-white border-b border-gray-800">
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="flex items-center justify-between h-16">
+          <div className="flex items-center gap-3">
+            {/* Mobile hamburger */}
+            <button
+              aria-label="Open menu"
+              className="md:hidden p-2 rounded hover:bg-gray-800"
+              onClick={() => setMobileOpen(!mobileOpen)}
+            >
+              <Menu />
+            </button>
+
+            {/* Brand */}
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 rounded bg-gray-900 flex items-center justify-center">
                 <Github size={18} />
               </div>
-              <div className="w-[23px] flex items-center align-center justify-center">
-                {"<"}
-              </div>
+              <span className="font-bold hidden sm:inline">Ronald De Mesa</span>
             </div>
-            <div>|</div>
-            <div className="flex gap-3">
-              <div className="border width-[50px] h-[30px] rounded flex">
-                <div className="w-[30px] flex items-center align-center justify-center">
-                  <Plus size={18} />
-                </div>
-                <div className="w-[30px] flex items-center align-center justify-center">
-                  <ChevronDown size={18} />
-                </div>
-              </div>
-              <div className="w-[30px] h-[30px] border-1 rounded flex items-center align-center justify-center">
-                <CircleDot size={18} />
-              </div>
-              <div className="w-[30px] h-[30px] border-1 rounded flex items-center align-center justify-center">
-                <GitPullRequest size={18} />
+
+            {/* Search (hidden on small screens) */}
+            <div className="hidden md:block ml-4">
+              <div className="relative">
+                <input
+                  className="bg-gray-900 text-sm rounded px-3 py-1 w-72 focus:outline-none"
+                  placeholder="Search or jump to..."
+                />
+                <Search
+                  className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400"
+                  size={16}
+                />
               </div>
             </div>
           </div>
-          <div className="w-[30px] h-[30px] border-1 rounded flex items-center align-center justify-center">
-            <Inbox size={18} />
+
+          <div className="flex items-center gap-3">
+            {/* Nav items (desktop) */}
+            <nav className="hidden md:flex items-center gap-4 text-sm">
+              <a className="px-3 py-1 rounded hover:bg-gray-900">Overview</a>
+              <a className="px-3 py-1 rounded hover:bg-gray-900">
+                Repositories
+              </a>
+              <a className="px-3 py-1 rounded hover:bg-gray-900">Projects</a>
+              <a className="px-3 py-1 rounded hover:bg-gray-900 hidden lg:inline">
+                Packages
+              </a>
+              <a className="px-3 py-1 rounded hover:bg-gray-900 hidden lg:inline">
+                Stars
+              </a>
+            </nav>
+
+            {/* Actions */}
+            <div className="flex items-center gap-2">
+              <button
+                className="hidden md:inline-flex items-center justify-center w-8 h-8 rounded hover:bg-gray-800"
+                aria-label="Create"
+              >
+                <Plus size={16} />
+              </button>
+
+              <button
+                className="hidden md:inline-flex items-center justify-center w-8 h-8 rounded hover:bg-gray-800"
+                aria-label="Notifications"
+              >
+                <CircleDot size={16} />
+              </button>
+
+              <button
+                className="hidden md:inline-flex items-center justify-center w-8 h-8 rounded hover:bg-gray-800"
+                aria-label="Pull requests"
+              >
+                <GitPullRequest size={16} />
+              </button>
+
+              <button
+                className="p-2 rounded hover:bg-gray-800 md:hidden"
+                onClick={() => setSearchOpen(!searchOpen)}
+                aria-label="Open search"
+              >
+                <Search size={16} />
+              </button>
+
+              <button
+                className="p-1 rounded-full border border-gray-700 w-8 h-8 flex items-center justify-center bg-gray-900"
+                aria-label="Profile"
+              >
+                {/* avatar placeholder */}
+                <span className="text-sm">R</span>
+              </button>
+            </div>
           </div>
-          <div className="w-[30px] h-[30px] rounded-full border-1">icon</div>
         </div>
-      </div>
-      <div className="h-[55px] flex p-3 align-items-center justify-content-center">
-        <div className="flex gap-5">
-          <div className="h-[30px] px-3 py-1 rounded hover:bg-gray-900 ">
-            Overview
+
+        {/* Mobile search */}
+        {searchOpen && (
+          <div className="md:hidden py-2">
+            <input
+              className="w-full bg-gray-900 px-3 py-2 rounded text-sm focus:outline-none"
+              placeholder="Search or jump to..."
+            />
           </div>
-          <div className="h-[30px] px-3 py-1 rounded hover:bg-gray-900 ">
-            Repository
+        )}
+
+        {/* Mobile menu */}
+        {mobileOpen && (
+          <div className="md:hidden mt-2 pb-4 border-b border-gray-800">
+            <div className="flex flex-col gap-2">
+              <a className="px-3 py-2 rounded hover:bg-gray-800">Overview</a>
+              <a className="px-3 py-2 rounded hover:bg-gray-800">
+                Repositories
+              </a>
+              <a className="px-3 py-2 rounded hover:bg-gray-800">Projects</a>
+              <a className="px-3 py-2 rounded hover:bg-gray-800">Packages</a>
+              <a className="px-3 py-2 rounded hover:bg-gray-800">Stars</a>
+            </div>
           </div>
-          <div className="h-[30px] px-3 py-1 rounded hover:bg-gray-900 ">
-            Projects
-          </div>
-          <div className="hidden h-[30px] px-3 py-1 rounded hover:bg-gray-900 ">
-            Packages
-          </div>
-          <div className="hidden h-[30px] px-3 py-1 rounded hover:bg-gray-900 ">
-            Stars
-          </div>
-        </div>
-        {/* place overview, repositories, projects,packages, stars{" "}
-        <div>
-          create way to check width and create overflow button for other options
-        </div> */}
+        )}
       </div>
     </header>
   );

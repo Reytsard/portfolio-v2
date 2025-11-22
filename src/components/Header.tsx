@@ -71,10 +71,10 @@ function Header() {
           <div className="h-[30px] px-3 py-1 rounded hover:bg-gray-900 ">
             Projects
           </div>
-          <div className="h-[30px] px-3 py-1 rounded hover:bg-gray-900 ">
+          <div className="hidden h-[30px] px-3 py-1 rounded hover:bg-gray-900 ">
             Packages
           </div>
-          <div className="h-[30px] px-3 py-1 rounded hover:bg-gray-900 ">
+          <div className="hidden h-[30px] px-3 py-1 rounded hover:bg-gray-900 ">
             Stars
           </div>
         </div>

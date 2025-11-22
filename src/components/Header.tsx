@@ -1,32 +1,62 @@
+import {
+  ChevronDown,
+  CircleDot,
+  Github,
+  GitPullRequest,
+  Inbox,
+  Menu,
+  Plus,
+  Search,
+} from "lucide-react";
+
 function Header() {
   return (
     <header className="text-white bg-black">
       <div className="flex place-content-between p-4">
         <div className="flex gap-4">
-          <div className="w-[30px] h-[30px] border-1 rounded ">
+          <div className="w-[30px] h-[30px] border-1 rounded flex items-center align-center justify-center ">
             {/* <FontAwesomeIcon /> */}
+            <Menu />
           </div>
-          <div className="w-[30px] h-[30px] rounded-full border-1">logo</div>
+          <div className="w-[30px] h-[30px] rounded-full border-1 flex items-center align-center justify-center">
+            <Github size={18} />
+          </div>
           <div className="font-bold">Ronald De Mesa</div>
         </div>
         <div className="flex gap-3">
-          <div className="w-[30px] h-[30px] border-1 rounded">search</div>
+          <div className="w-[30px] h-[30px] border-1 rounded flex items-center align-center justify-center">
+            <Search size={"18"} />
+          </div>
           <div className="hidden md:flex gap-3">
             <div className="border width-[50px] h-[30px] rounded flex">
-              <div className="h-full border-e-2">github</div>
-              <div className="w-[23px]">{"<"}</div>
+              <div className="w-[40px] h-full border-e-2 flex items-center align-center justify-center">
+                <Github size={18} />
+              </div>
+              <div className="w-[23px] flex items-center align-center justify-center">
+                {"<"}
+              </div>
             </div>
             <div>|</div>
             <div className="flex gap-3">
               <div className="border width-[50px] h-[30px] rounded flex">
-                <div>plus</div>
-                <div>down</div>
+                <div className="w-[30px] flex items-center align-center justify-center">
+                  <Plus size={18} />
+                </div>
+                <div className="w-[30px] flex items-center align-center justify-center">
+                  <ChevronDown size={18} />
+                </div>
               </div>
-              <div className="w-[30px] h-[30px] border-1 rounded">issues</div>
-              <div className="w-[30px] h-[30px] border-1 rounded">PRs</div>
+              <div className="w-[30px] h-[30px] border-1 rounded flex items-center align-center justify-center">
+                <CircleDot size={18} />
+              </div>
+              <div className="w-[30px] h-[30px] border-1 rounded flex items-center align-center justify-center">
+                <GitPullRequest size={18} />
+              </div>
             </div>
           </div>
-          <div className="w-[30px] h-[30px] border-1 rounded">inbox</div>
+          <div className="w-[30px] h-[30px] border-1 rounded flex items-center align-center justify-center">
+            <Inbox size={18} />
+          </div>
           <div className="w-[30px] h-[30px] rounded-full border-1">icon</div>
         </div>
       </div>

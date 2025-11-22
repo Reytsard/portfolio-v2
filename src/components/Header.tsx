@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
-  ChevronDown,
   CircleDot,
   Github,
   GitPullRequest,
-  Inbox,
   Menu,
   Plus,
   Search,

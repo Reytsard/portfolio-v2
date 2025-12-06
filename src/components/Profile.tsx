@@ -1,4 +1,6 @@
 import React from "react";
+import pfp from "../../assets/pfp.png";
+import blog from "../../assets/blogsite.png";
 
 const Profile: React.FC = () => {
   return (
@@ -7,10 +9,13 @@ const Profile: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <aside className="md:col-span-1">
             <div className="bg-gray-800 p-6 rounded-lg">
-              <div className="flex flex-col items-center text-center">
-                <div className="w-[200px] h-[200px] md:w-[220px] md:h-[220px] rounded-full bg-gray-700 flex items-center justify-center overflow-hidden mb-4">
-                  Image
-                </div>
+              <div className="flex flex-col items-center text-center ">
+                <img
+                  src={pfp}
+                  alt="Profile picture"
+                  className="w-[200px] h-[200px] md:w-[220px] md:h-[220px] rounded-full bg-gray-700 flex items-center justify-center overflow-hidden mb-4"
+                />
+
                 <h1 className="text-2xl font-bold">Ronald De Mesa</h1>
                 <p className="text-sm text-gray-300 mt-2">Software Developer</p>
                 <div className="mt-3 flex gap-2 text-sm text-gray-300">
@@ -19,9 +24,9 @@ const Profile: React.FC = () => {
                   <div>San Francisco, CA</div>
                 </div>
                 <div className="mt-4 flex gap-2">
-                  <button className="bg-transparent border border-gray-600 px-3 py-1 rounded text-sm">
+                  {/* <button className="bg-transparent border border-gray-600 px-3 py-1 rounded text-sm">
                     Edit profile
-                  </button>
+                  </button> */}
                   <a className="bg-gray-700 px-3 py-1 rounded text-sm" href="#">
                     Download resume
                   </a>
@@ -53,12 +58,16 @@ const Profile: React.FC = () => {
             <section className="bg-gray-800 p-6 rounded-lg mb-6">
               <h2 className="text-lg font-semibold mb-4">Pinned Projects</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <article className="bg-gray-700 p-4 rounded">
-                  <div className="font-semibold">Project One</div>
+                <a
+                  href="https://reytsard.github.io/React-Router-Project-Refocus"
+                  className="bg-gray-700 p-4 rounded hover:pointer"
+                >
+                  <img className="h-[200px] pb-3" src={blog}></img>
+                  <div className="font-semibold">Blogsite</div>
                   <div className="text-sm text-gray-300 mt-1">
-                    Short description of project one.
+                    React + Vite + SCSS
                   </div>
-                </article>
+                </a>
                 <article className="bg-gray-700 p-4 rounded">
                   <div className="font-semibold">Project Two</div>
                   <div className="text-sm text-gray-300 mt-1">

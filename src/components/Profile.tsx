@@ -1,6 +1,9 @@
 import React from "react";
 import pfp from "../../assets/pfp.png";
 import blog from "../../assets/blogsite.png";
+import shop from "../../assets/onlineshop.png";
+import brewery from "../../assets/brewery.png";
+import cattery from "../../assets/Cattery.png";
 
 const Profile: React.FC = () => {
   return (
@@ -68,24 +71,35 @@ const Profile: React.FC = () => {
                     React + Vite + SCSS
                   </div>
                 </a>
-                <article className="bg-gray-700 p-4 rounded">
-                  <div className="font-semibold">Project Two</div>
+                <a
+                  href="https://online-shop-three-lac.vercel.app/folder1/page1"
+                  className="bg-gray-700 p-4 rounded"
+                >
+                  <img className="h-[200px] pb-3" src={shop}></img>
+                  <div className="font-semibold">Online Shop</div>
                   <div className="text-sm text-gray-300 mt-1">
-                    Short description of project two.
+                    React + Redux + React Router + SCSS
                   </div>
-                </article>
-                <article className="bg-gray-700 p-4 rounded">
-                  <div className="font-semibold">Project Three</div>
+                </a>
+                <a
+                  href="https://reytsard.github.io/brewery-locator/"
+                  className="bg-gray-700 p-4 rounded"
+                >
+                  <img src={brewery} alt="brewery" className="h-[200px] pb-3" />
+                  <div className="font-semibold">Brewery Locator</div>
                   <div className="text-sm text-gray-300 mt-1">
-                    Short description of project three.
+                    React + API Integration + Bootstrap + Google Maps
                   </div>
-                </article>
-                <article className="bg-gray-700 p-4 rounded">
-                  <div className="font-semibold">Project Four</div>
-                  <div className="text-sm text-gray-300 mt-1">
-                    Short description of project four.
-                  </div>
-                </article>
+                </a>
+                <a
+                  href="https://online-shop-three-lac.vercel.app/folder1/page1"
+                  className="bg-gray-700 p-4 rounded"
+                >
+                  <img src={cattery} alt="brewery" className="h-[200px] pb-3" />
+
+                  <div className="font-semibold">Cattery</div>
+                  <div className="text-sm text-gray-300 mt-1">Wordpress</div>
+                </a>
               </div>
             </section>
 

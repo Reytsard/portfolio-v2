@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import pfp from "../../assets/pfp.png";
 import blog from "../../assets/blogsite.png";
 import shop from "../../assets/onlineshop.png";
@@ -24,7 +24,7 @@ const Profile: React.FC = () => {
                 <div className="mt-3 flex gap-2 text-sm text-gray-300">
                   <div>24</div>
                   <div>|</div>
-                  <div>San Francisco, CA</div>
+                  <div>Baguio City, PH</div>
                 </div>
                 <div className="mt-4 flex gap-2">
                   {/* <button className="bg-transparent border border-gray-600 px-3 py-1 rounded text-sm">
